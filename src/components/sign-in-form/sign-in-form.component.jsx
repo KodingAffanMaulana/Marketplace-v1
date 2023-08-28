@@ -3,7 +3,7 @@ import { useState } from "react";
 import FormInput from "../form-input/form-input.component";
 import Button from "../button/button.component";
 
-import { signInWithGooglePopup, createUserDocumentFromAuth, signInAuthWithEmailAndPassword } from '../../utils/firebase/firebase.utils'
+import { signInWithGooglePopup, signInAuthWithEmailAndPassword } from '../../utils/firebase/firebase.utils'
 import './sign-in-form.style.scss'
 
 const defaultFormFields = {
@@ -27,6 +27,7 @@ const SignInForm = () => {
         event.preventDefault();
 
         try {
+            // eslint-disable-next-line no-unused-vars
             const { user } = await signInAuthWithEmailAndPassword(
                 email,
                 password
